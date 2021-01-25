@@ -27,6 +27,9 @@ func setupHTTP() {
 	http.HandleFunc("/submitRegister", submitRegister)
 	http.HandleFunc("/register", registerPage)
 
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
 	log.Fatal(http.ListenAndServe(":3030", nil))
 }
 
