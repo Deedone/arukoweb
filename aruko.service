@@ -1,0 +1,10 @@
+[Unit]
+Description="Aruko org web interface"
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+ExecStart=/www/aruko/main
+WorkingDirectory=/www/aruko/
+
+[Install]
+WantedBy=multi-user.target

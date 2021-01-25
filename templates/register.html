@@ -1,0 +1,42 @@
+<html>
+    <title>Aruko login</title>
+    <meta charset="utf-8">
+</html>
+<body>
+    <h2>Aruko login</h2>
+
+    <p>Hi there</p>
+
+    <label for="name">Name</label>
+    <input type="text" id="name">
+    <label for="pass">Password</label>
+    <input type="password" id="pass">
+    <button id="register">Register</button>
+
+
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <script type="text/javascript">
+    let btn = $("#register");
+    let name = $("#name");
+    let pass = $("#pass");
+
+    btn.on("click",() => {
+        console.log("name",name.val());
+        console.log("pass",pass.val());
+        $.ajax({
+            url:"submitRegister",
+            type:"POST",
+            dataType:"json",
+            contentType : 'application/json',
+            data:JSON.stringify({
+                name:name.val(),
+                pass:pass.val()
+            })
+        });
+    });
+
+
+
+    </script>
+
+</body>
