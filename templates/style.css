@@ -1,0 +1,58 @@
+
+body {
+  color: #3D3E3F;
+  background-color: #F0EEF2;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.input1 {
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 1px;
+  border-bottom-color: #3D3E3F;
+  border-style: solid;
+
+  background-color: inherit;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  height: 20px;
+  padding: 15px 20px 15px 2px;
+
+  font-size: 16px;
+}
+
+.button1 {
+  width: 35%;
+  height: 40px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #C9BBF1;
+  border: 1px #9B8BC8 solid;
+  box-shadow: 2px 2px 5px grey;
+
+  color: #3D3E3F;
+  font-size: 16px;
+}
+
+.window {
+  padding: 30px;
+  padding-top: 10px;
+  box-shadow: 2px 2px 5px grey;
+  background-color: #F9F9F9;
+  width: 20%;
+}
+
+.logo {
+}
+#logo_aruko {
+  width: 40%;
+  margin-left: 70%;
+  margin-right: 10%;
+}

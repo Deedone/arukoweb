@@ -1,17 +1,48 @@
 <html>
     <title>Aruko login</title>
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </html>
 <body>
-    <h2>Aruko login</h2>
+  <div class="topbar" style="display: flex">
+    <div class="window" style="margin-top: 5%; margin-left: 10%;">
+      <h2>Log in to your account</h2>
 
-    <p>Hi there</p>
+      <input type="text" class = "input1" id="name" placeholder="Name/email"
+        style="width:50%">
+      <br><br>
+      <input type="password" class = "input1" id="pass" placeholder = "Password"
+        style="width:50%">
+      <br><br>
+      <button id="login" class="button1"
+        style="margin-left: 55%;margin-right: 5%">Log in</button>
+    </div>
+    <div class="logo" style="margin-top: 40px;">
+      <img id="logo_aruko" src="assets/aruko.png" alt="aruko">
+    </div>
+  </div>
 
-    <label for="name">Name</label>
-    <input type="text" id="name">
-    <label for="pass">Password</label>
-    <input type="password" id="pass">
-    <button id="register">Register</button>
+  <div class="window" style="margin-left: 50%;">
+    <h2>Register a new account</h2>
+
+    <input type="text" class = "input1" id="reg_name" placeholder="example"
+      style="width:50%">
+    <label>@aruko.org</label>
+    <br><br>
+    <input type="password" class = "input1" id="reg_pass" placeholder = "Password"
+      style="width:50%">
+    <br><br>
+    <input type="password" class = "input1" id="reg_pass_conf" placeholder = "Password confirmation"
+      style="width:50%">
+    <br><br>
+    <button id="register" class="button1"
+      style="margin-left: 65%;margin-right: 5%">Register</button>
+  </div>
+
+
 
 
     <script type="text/javascript" src="/static/jquery.js"></script>
@@ -34,8 +65,6 @@
             })
         });
     });
-
-
 
     </script>
 
