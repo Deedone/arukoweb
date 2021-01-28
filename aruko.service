@@ -5,6 +5,8 @@ After=network.target network-online.target nss-lookup.target
 [Service]
 ExecStart=/www/aruko/main
 WorkingDirectory=/www/aruko/
+User=http
+Group=http
 
 [Install]
 WantedBy=multi-user.target

@@ -32,6 +32,8 @@
       style="width:50%">
     <label>@aruko.org</label>
     <br><br>
+    <input type="password2" class = "input1" id="admin_pass" placeholder = "Secret admin password"
+      style="width:50%">
     <input type="password" class = "input1" id="reg_pass" placeholder = "Password"
       style="width:50%">
     <br><br>
@@ -40,6 +42,9 @@
     <br><br>
     <button id="register" class="button1"
       style="margin-left: 65%;margin-right: 5%">Register</button>
+
+      <p id="err"></p>
+      <p id="succ"></p>
   </div>
 
 
@@ -48,12 +53,17 @@
     <script type="text/javascript" src="/static/jquery.js"></script>
     <script type="text/javascript">
     let btn = $("#register");
-    let name = $("#name");
-    let pass = $("#pass");
+    let name = $("#reg_name");
+    let pass = $("#reg_pass");
+    let adminpass = $("#admin_pass");
+    let pass_conf = $("#reg_pass_conf");
 
     btn.on("click",() => {
-        console.log("name",name.val());
-        console.log("pass",pass.val());
+      if (pass.val() != pass_conf.val()) {
+              $("#err").text("Passwords are not equal")
+              $("#succ").text("")
+              return
+      }
         $.ajax({
             url:"submitRegister",
             type:"POST",
@@ -61,8 +71,17 @@
             contentType : 'application/json',
             data:JSON.stringify({
                 name:name.val(),
-                pass:pass.val()
-            })
+                pass:pass.val(),
+                pass2:adminpass.val()
+            }),
+            error: (xhr, stat,err) => {
+              $("#err").text(xhr.responseText)
+              $("#succ").text("")
+            },
+            success: (data) => {
+              $("#err").text("")
+              $("#succ").text(err)
+            }
         });
     });
 
